@@ -42,6 +42,20 @@
             <br>
             <script>
                 //Write the code to calculate the total price and discounted price for the tickets
+                let num_Tickets, cost_per_ticket, discount_offer,discount_price,actual_cost,cost, totalcost;
+                num_Tickets=3;
+                cost_per_ticket= 9;
+                discount_offer=10;
+                cost= (num_Tickets * cost_per_ticket);
+                actual_cost= cost;
+                /*discounted price*/
+                discount_price= cost * discount_offer/100;
+                totalcost= cost - discount_price;
+                /*display price to the user after the calculations*/
+                document.write(`Total Number of seats booked:${num_Tickets}</br>
+                Total cost of tickets:$ ${actual_cost}</br>
+                Festive season discount is :${discount_offer}%</br>
+                Total cost after discount is:$${totalcost}`)
             </script>
         </div>
     </center>
