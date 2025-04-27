@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Details</title>
+    <style>
+        div#maincontent {
+            height: 200px;
+            width: 600px;
+            border: 1px solid #CEE2FA;
+            text-align: left;
+            color: #08438E;
+            font-family: calibri;
+            font-size: 20;
+            padding: 5px;
+        }
+        div#heading {
+            text-decoration: bold;
+            text-align: center;
+            margin-top: 80px;
+            width: 600px;
+            border: 1px solid #CEE2FA;
+            text-align: center;
+            color: #08438E;
+            background-color: #CEE2FA;
+            font-family: calibri;
+            font-size: 20;
+            padding: 5px;
+        }
+        h4 {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div id="heading">
+            <b>Theatre Drama</b>
+        </div>
+        <div id="maincontent">
+            <h4>Your Ticket Details:</h4>
+            <br>
+            <script>
+               
+                //this example is without using loops simple based on the 
+                //individual example.
+                /*
+                Write a JavaScript code to make online booking of theatre tickets and calculate the total price based on the below conditions:
+
+                If seats to be booked are not more than 2, the cost per ticket remains $9.
+
+                If seats are 5 or more, booking is not allowed.
+
+                If seats to be booked are more than 2 but less than 5, based on the number of seats booked, do the following:
+
+                Calculate total cost by applying discounts of 5, 7, 9, 11 percent, and so on for customer 1,2,3 and 4.
+
+                Try the code with different values for the number of seats
+                
+                */
+                let num_ticket,Total_cost,customer=[1,2,3,4],discount,cost;
+
+
+                //let customer booked one ticket 
+                num_ticket = 4;
+                    discount = 0;
+                if (num_ticket==1){
+                    
+                    Total_cost= ((num_ticket*9 )+ discount/100);
+
+                } else if (num_ticket>2 && num_ticket< 5){
+
+                    Total_cost=  ((9 - (9*(5/100) ))+(9-( 9 * (7/100)))+(9-(9 * (9/100)))+(9-(9 * (11/100))))
+                } else{
+                     //do nothing.
+                }
+                //it can be improved significantly using loop , arrey and function but its a beggginer code .
+                
+                document.write(`Ticket for customer for 1 ticket is :${Total_cost}`);
+                //lets use a switch to do the same without using a break condition.
+
+                Total_cost=0;
+                switch (1) {
+                    case 1:
+                    cost =  9*(1-0.05);
+                    Total_cost += cost;
+                    document.write(`</br></br>Ticket for customer for ${customer[0]} ticket is :${cost}`);
+                    case 2:
+                    cost =  9*(1-0.07);
+                    Total_cost += cost;
+                    document.write(`</br>Ticket for customer for ${customer[1]} ticket is :${cost}`);
+                    case 3:
+                    cost =  9*(1-0.09);
+                    Total_cost += cost;
+                    document.write(`</br>Ticket for customer for ${customer[2]} ticket is :${cost}`);
+                    case 4:
+                    cost =  9*(1-0.11);
+                    Total_cost += cost;
+                    document.write(`</br>Ticket for customer for ${customer[3]} ticket is :${cost}`);
+                    default:
+                    document.write(`</br>Ticket for customer  ticket is :${Total_cost}`);
+                }
+
+
+            </script>
+        </div>
+    </center>
+</body>
+</html>
