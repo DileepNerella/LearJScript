@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Functions Demo</title>
+    <style>
+        body {
+            padding-top: 10px;
+        }
+    </style>
+</head>
+
+<body class="container-fluid">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3>Functions</h3>
+        </div>
+
+        <div class="panel-body">
+            <script>
+                function execute(Methodof) //User defined Function 
+                {
+                    //Functions from No.1 to No.6 are Built-In Functions
+                    //1. alert 
+                    alert("Let us calculate SI");
+
+                    //2. prompt 
+                    let P = prompt("Please enter Principal Amount P");
+                    let R = prompt("Please enter Rate of Interest r");
+                    let N = prompt("Please enter Number of Years t/N");
+                    let n;
+                    document.write("You have entered P :  " + P + "<br><br>");
+                    document.write("You have entered R :  " + R + "<br><br>");
+                    document.write("You have entered N :  " + N + "<br><br>");
+                    if(Methodof=="CI")
+                    { 
+                        n= parseInt(prompt("Number of times intrest is compounded n"));
+                        console.log("cal N"+n+ typeof(n));
+                        
+                    }
+
+
+                    //3. confirm 
+                    let decision = confirm("Shall we proceed to calculate SI/CT?");
+                    if (decision) console.log("You decided to proceed" + "<br><br>");
+                    else console.log("You decided not to proceed" + "<br><br>");
+                    if(Methodof=="SI"){
+                    //4. eval  
+                    eval(P * R * N);
+                    document.write("Calculated SI is " + (eval(P * R * N)) / 100 + "<br><br>");
+
+                    }
+                    else{
+
+                        let CI=eval(P*(1+(R/n))^(n*N));
+
+                        document.write("Calculated CI is "+ CI+"<br><br>");
+
+                    }
+                    //5. setTimeout 
+                    function executeMe1() {
+                        document.write("Function timeout !!!" + "<br><br>");
+                    }
+                    setTimeout(executeMe1, 3000);
+
+                    //6.setInterval 
+                    function executeMe2() {
+                        //execute();
+                        document.write("Function called at regular interval !!!" + "<br><br>");
+                    }
+                    setInterval(executeMe2, 3000);
+                }
+                
+
+            </script>
+        </div>
+    </div>
+    <button type="button" onclick="execute('SI');">Click Here to Calculate SI</button>
+    <button type="button" onclick="execute('CI');">Clic here to calculate CI</button>
+</body>
+
+</html>
