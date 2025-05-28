@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Details</title>
+    <style>
+        div#maincontent {
+            height: 200px;
+            width: 600px;
+            border: 1px solid #CEE2FA;
+            text-align: left;
+            color: #08438E;
+            font-family: calibri;
+            font-size: 20;
+            padding: 5px;
+        }
+        div#heading {
+            text-decoration: bold;
+            text-align: center;
+            margin-top: 80px;
+            width: 600px;
+            border: 1px solid #CEE2FA;
+            text-align: center;
+            color: #08438E;
+            background-color: #CEE2FA;
+            font-family: calibri;
+            font-size: 20;
+            padding: 5px;
+        }
+        h4 {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div id="heading">
+            <b>Theatre Drama</b>
+        </div>
+        <div id="maincontent">
+            <h4>Your Ticket Details:</h4>
+            <br>
+            <script>
+                /* biz requirement
+                Problem Statement:
+
+                Write a JavaScript code to do online booking of theatre tickets and calculate the total price based on the below conditions:
+
+                If seats to be booked are not more than 2, the cost per ticket remains $9.  
+
+                If seats are 6 or more, booking is not allowed.  
+
+                If seats to be booked are more than 2 but less than 5, based on the number of seats booked, do the following: 
+
+                Calculate total cost by applying a discount of 5, 7, 9, 11 percent, and so on for customer 1,2,3 till 5.
+
+                Try the code with different values for the number of seats. 
+
+                Implement the problem statement using 'for' loop, 'while' loop and 'do-while' loop. 
+                */
+               
+                 function getDiscountRate(TicketNumber){
+                   
+                   //console.log("Inside the getdiscount "+ TicketNumber + typeof(TicketNumber));
+                    switch (TicketNumber) {
+                    case 1:
+                        return 5;
+                        break;
+                   case 2:
+                        return 7;
+                        break;
+                   case 3:
+                        return 9;
+                        break;
+                   case 4:
+                        return 11;
+                        break;
+                   default:
+                        return 0;
+                    }
+                }
+                function DisplayCost(Ticket_num,Total_Cost,discnt){
+                    
+                   // console.log("Inside display cost"+discnt +typeof(discnt));
+                    if(discnt>0){
+
+                        // Ticket with discount
+                        document.write(`</br>Ticket for Customer ${Ticket_num} gets ${discnt} % discount!,Cost is :$ ${Total_Cost}`);
+
+                    }else if(discnt == 0 ){
+                
+                        //ticket without discount
+                        document.write(`</br>Ticket for Customer ${Ticket_num},Cost is :$ ${Total_Cost}`);
+                    
+                    }    
+                    else{
+                       //Ticket cannot be booked.
+                        
+                        document.write(`</br>Ticket Cannot be booked`);
+                    }
+                } 
+
+                function PurchaseTicket(Ticket_num) {
+
+            
+                   // console.log("Inside the Purchase "+Ticket_num+ "type" +typeof(Ticket_num)) ;
+
+                    let cost,discountrate,nu_tik;
+                    const ticketrate=9;
+
+                    nu_tik= parseInt(Ticket_num);
+                   // console.log("Inside the Purchase "+nu_tik+ " type" +typeof(nu_tik)) ;
+
+                    // discount method.  
+                
+                    for (let i=1;i<=nu_tik;i++){
+
+                        //console.log("inside the for loop"+ i +" "+nu_tik );
+                        if (nu_tik>=6){
+
+                            //Ticket with No bookings
+                            //console.log("first if");
+                            DisplayCost(nu_tik,9,-1);
+                            break;
+
+                        } else if (nu_tik >=1 && nu_tik <= 2){
+
+                            //console.log("second if chck");
+                            //Simple 1 and 2 scenario.
+                            switch (i) {
+                                case 1:
+                                    cost = ticketrate;
+                                    DisplayCost(i,9,0);
+                                   // console.log("case 1");
+                                    break;
+                                case 2:
+                                    cost = ticketrate;
+                                    DisplayCost(i,9,0);
+                                    break;
+                                   // console.log("seond swicth");
+                                default:
+                                    break;
+                            }
+                        
+                            
+                        } else {
+
+                            discountrate= getDiscountRate(i);
+                            //console.log("discount rate "+ discountrate);
+                            cost= ticketrate *(1-(discountrate/100));
+                            DisplayCost(i,cost,discountrate);
+
+                            
+                        }
+                    } 
+                }
+
+            
+
+            do{
+                    NumberofTicket = prompt("How many tickets ?");
+                        
+                    PurchaseTicket(NumberofTicket);
+                    decision=confirm("do you want to proceed with ticket purchase ?");
+
+            }   while(decision);
+        
+            </script>
+        </div>
+    </center>
+</body>
+</html>

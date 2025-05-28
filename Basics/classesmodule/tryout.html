@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Classes Demo</title>
+    <script>
+        class Vehicle {
+            constructor(make, model) {
+                this.make = make;
+                this.model = model;
+            }
+        }
+
+        class Car extends Vehicle {
+            constructor(make, model, regNo, fuelType) {
+                super(make, model);
+                this.regNo = regNo;
+                this.fuelType = fuelType;
+            }
+        
+            
+        
+            getDetails() {
+                document.write(`${this.make},${this.model},${this.regNo},${this.fuelType}</br>`);
+            }
+        }
+        class Bus extends Vehicle{
+            constructor(make, model, regNo, fuelType,Type) {
+                super(make, model);
+                this.regNo = regNo;
+                this.fuelType = fuelType;
+                this.Type=Type;
+        }
+        getDetails() {
+                document.write(`${this.make},${this.model},${this.regNo},${this.fuelType},${this.Type}</br>`);
+            }
+        }
+
+        let cObj1 = new Car("Hundai", "i10", "KA01-6447", "Petrol");
+        //create a new class and declared a object.
+        let bObj1 = new Bus("Volvo", "ISUZE", "KA01-6448", "Petrol","Luxury");
+        cObj1.getDetails();
+        bObj1.getDetails();
+    </script>
+</head>
+
+</html>

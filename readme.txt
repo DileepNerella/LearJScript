@@ -156,3 +156,67 @@ let dummyArr = new Array();    
 //OR 
 let dummyArr = []; 
 
+//////////////////////////
+Basic floder contain sample programs of html 
+with the usage of stater things.
+
+Notes:
+Types of statements in Java scripts.
+1.conditional
+types of conditional statements
+-if-else---- 
+    three variants
+        if(){}
+        if(){} else{}
+        if(){} else if(){} else{}
+-switch case.
+    switch(exp){
+        case value1:
+        code block
+        break;
+        case value2:
+        code block
+        break;
+        default:
+        code block;
+}
+
+
+
+terinary operator
+(condition )?(true block):fasle block;
+
+
+2.non conditional.
+
+-comment.
+    single line--// 
+    multiline--/* */
+-break
+    helps to completly come out of the loop execution 
+    and start the control immediatley the line following the 
+    end of loop.
+-continue.
+    helps to skip the iteration and start the code from the start of loop from next 
+    iteration.
+    i.e if a condition is met at let say in 3 ietration out of 5 then the loop will
+    skip code in 3 ietration and start from 4 and continue to 5.
+
+/**********************************************/
+loops in java script
+-for
+for(initialization;condition check ;incremeant){
+
+}
+
+
+-while
+while(){
+
+}
+
+-do..while
+
+do{
+
+}while();

@@ -1,0 +1,109 @@
+Regular expression:
+Special Symbols and its meaning in regex:
+
++ --> once and many times of apperence of char on leftside of this symbol
+ex: ab+c--> abbbc ,abc, abbc etc.
+
+* --> O or more appearence.
+ex: ab*c---> abc, ac, abbc.
+
+? --> Optional chat=racter.
+ex: ab?c  means b can be Optional.
+
+1.Assertions:
+
+Assertions include boundaries ,which indicate the beginings 
+and endings of lines and words ,and other patterns indicating 
+in some way that match is possible.
+look-ahead.
+look-behind.
+and conditional expressions.
+
+Boundary type assertions:
+
+1. ^ --> Input boundary begining assertion.
+Matches the begining of the input. if the multi line flag is enabled ,also matches 
+immediatley after a line break.
+
+example:
+/^A/ matches "A" in "An A" but not A in "an A". here it is looking begining of char.
+
+
+2.$ --> Input boundary end assertion.:
+Macthes end of the input .if the multiline m is enabled ,also matches immediately before a 
+line break character.
+
+example: /t$/ match t in "eat" but not t in "eater".
+
+3.Word boundary assertion.
+
+Matches a word boundary .this is the position where a word character is not follwed or preceded by 
+another word character, such as between a letter and space.
+Note that a matched word boundary is not included in the match. in other words , the length of a matched word 
+boundary is zero.
+
+example:
+1./\bm/ matches "m" in "moon" becase thre is nothing before m and \b is placed infront.
+2./oo\b/ doesnot match the "oo" in "moon" becasue "oo" is followed by n 
+3./oon\b/ matches "oon" in moon.
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Assertions
+
+
+
+
+
+2.character classes ::
+
+Distinguish different characters.
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes
+
+[xyx]--> matches any of enclosed characters.
+[a-c]--> a to c.
+
+Negated Character Class:
+[^xyz] matches anything not in the character class .
+
+wildcard : .
+matches any single char except line terminators: \n,\r,\u2028.
+
+digital character: \d
+ex: /\d/ or /\[0-9]/
+Non digit charcater:
+/D==> [^0-9]
+
+word character: 
+[A-Za-z0-9_]==> \w
+
+Non Word character:
+[^A-Za-z0-9_]
+exam: "50%"--> %
+
+white space character:
+\s
+
+Non- White Space charcater
+\S
+
+Disjuntion:
+| 
+which implies either of them.
+
+
+
+
+
+3.Group and backreferences:
+
+groups multiple patterns as whole ,and capturing groups provide 
+extra submatch information when using a regular expression 
+pattern to match against a string.
+
+Backreferences refer to a previusly captured group in the same 
+regular expression.
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Groups_and_backreferences
+
+4.Quantifiers :
+indicates number of characters or expressions to match.
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Quantifiers
