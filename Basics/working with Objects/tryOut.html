@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Objects Demo</title>
+    <script>
+        /*the below is the  way of defining the object */
+        document.write("<b> Object Creation using Object Literal method </b>");
+        var Pdt1 =
+        {
+            PdtId: "P001",
+            PdtName: "Furniture",
+            Price: 850,
+            Qty: 0,
+            TotalAmount: 0,
+            ChangeQty: function (newQty) {
+                this.TotalAmount = newQty * this.Price;
+                return this.TotalAmount;
+            },
+        };
+
+        document.write("<br/>");
+        document.write(Pdt1.PdtId);
+        document.write("<br/>");
+        document.write(Pdt1["PdtName"]);
+        document.write("<br/>");
+        document.write(Pdt1.TotalAmount);
+        Pdt1.ChangeQty(10);
+        document.write("<br/>");
+        document.write(Pdt1.TotalAmount);
+        document.write("<br/>");
+        document.write("-----------");
+        document.write("<br/>");
+        document.write(Pdt1.PdtId);
+        document.write("<br/>");
+        document.write(Pdt1["PdtName"]);
+        document.write("<br/>");
+        document.write(Pdt1.TotalAmount);
+        Pdt1.ChangeQty(25);
+        document.write("<br/>");
+        document.write(Pdt1.TotalAmount);
+        document.write("<br/>");
+
+        /*creation of object using a function declaration*/
+        function FDTObjec(ID,Name,Price,Qty){
+            this.ID=ID;
+            this.Qty=Qty;
+            this.Name=Name;
+            this.Price=Price;
+            this.Totalamount= function (){
+                return this.Qty*this.Price;
+            };
+        }
+        document.write("<b> Object Creation using Function Declartion</b>");
+        let Pdt2= new FDTObjec("001","Toy",3,30);
+        document.write("<br/>");
+        document.write(JSON.parse(Pdt2));
+        document.write("<br/>");
+        document.write(Pdt2.ID);
+        document.write("<br/>");
+        document.write(Pdt2["Name"]);
+        document.write("<br/>");
+        document.write(Pdt2.Totalamount());
+        //Pdt1.ChangeQty(10);
+        document.write("<br/>");
+
+        let companies= ["C1","C2","C3","C4"]; 
+companies.splice(2,0,"C5");
+document.write(companies); 
+
+
+       
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

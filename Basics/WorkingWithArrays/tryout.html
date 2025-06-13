@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>  
+    <head>  
+        <title>Iterable Demo</title>
+        <script>  
+            let Pdt_Price = [5000, 3000, 500];  
+            const [Pdt1, Pdt2, Pdt3] = Pdt_Price;  
+            //destruturing of array.
+            document.write("Total Amount : " + (Pdt1+Pdt2+Pdt3) + "<br/>");       
+            
+            const [Pdt4,,Pdt5] = Pdt_Price; 
+            //destruturing and skipping of a value.
+            document.write("Total Amount " + (Pdt4+Pdt5) + "<br/>");
+
+            let [ProductId, ...ProductName] = [1001,"Mobiles","Furniture","Tablets","Books"];  
+            document.write("Product Id : " + ProductId + "<br/>");   
+
+            document.write("Product Name : " + ProductName +"<br/>"); 
+            let myArr = [];
+        for  (i = 0; i < 3; i++) {
+        myArr.push(function () {
+        console.log(i);
+            })
+            
+}
+
+myArr.forEach((element,index)=>console.log(element));
+
+for (j = 0; j < 3; j++) {
+    myArr[j]();
+}
+            
+        </script>  
+    </head>  
+</html>  
+
+ 
+ 

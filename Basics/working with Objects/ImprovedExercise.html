@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM API for HTML Modification</title>
+    <style>
+        body {
+            background-color: lightblue;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            transition: background-color 0.3s ease;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="header">Here's Your Ice Cream</h1>
+    <img id="iceCreamImage" src="FilledCone.png" alt="Image of an ice cream cone">
+    <button id="eatButton">Click here to eat</button>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

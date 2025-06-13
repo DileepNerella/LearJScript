@@ -104,6 +104,24 @@ Backreferences refer to a previusly captured group in the same
 regular expression.
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Groups_and_backreferences
 
+Capturing group:
+(x) anything between the () is called a group and 
+each group out put can be referenced using \n
+or $1,$2 in the order.
+
+Named capturing group:
+(?<name>X) name is used to access the captured/match value 
+in regex.
+
+Non Capturing group.
+(?:x)
+
+(?=...) is a positive look ahead , meaning it checks if the pattern inside exists
+but doesnt consume characters.
+
 4.Quantifiers :
 indicates number of characters or expressions to match.
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Quantifiers
+
+
+range of the above syntax.

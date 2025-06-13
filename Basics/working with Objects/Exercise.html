@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM API for HTML modification</title>
+</head>
+<body style="background-color:lightblue;text-align:center">
+    <h1 id="hdr1">Here's your ice cream</h1>
+    <img id="img1" src="FilledCone.png" alt="Ice cream is not ready">
+    <p id="p1" onclick="eat()">Click here to eat</p>
+    
+    <script>
+        function eat(){
+        
+        let imageref =document.getElementById("img1");
+        let headref= document.getElementById("hdr1");
+        let para1,para2;
+        para1=document.getElementById("p1");
+        //let bodyref= document.getElementById("body");
+        //console.log(imageref);
+        imageref.setAttribute("src","EmptyCone.png");
+        headref.textContent="Hope you liked it !";   
+        document.body.style.setProperty("background-color","#4ebe58");
+        para1.setAttribute("onclick","refill()");
+        para1.textContent="Click to Re-fill!";
+        }
+        function refill(){
+        
+        let imageref =document.getElementById("img1");
+        let headref= document.getElementById("hdr1");
+        let para1,para2;
+        para1=document.getElementById("p1");
+        //let bodyref= document.getElementById("body");
+        //console.log(imageref);
+        imageref.setAttribute("src","FilledCone.png");
+        headref.textContent="Here's a refilled cone!";   
+        document.body.style.setProperty("background-color","lightblue");
+        //para1.setAttribute("onclick","eat())");
+        para1.textContent="Enjoy yourself!";
+        }
+
+    </script>
+</body>
+</html>

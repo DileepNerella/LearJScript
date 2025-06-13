@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movies</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div style="margin-top:7%">
+        <center>
+            <h2>Your Favorite Movies!!</h2>
+        </center>
+    </div>
+    <!--div class="container" style="padding-top:5%">
+        <div class="row">
+            
+            <div class="col-md-4">
+                <div style="text-align: center;">
+                    <img src="./images/Tomorrowland.jpg" width="200px" height="250px">
+                </div>
+                <div style="padding-top:10px;">
+                    <div style="text-align: center; "><b><span id="mName1"></span></b></div>
+                    <div style="padding-top:10px;padding-left: 95px;"><b>Language: </b><span id="lang1"></span>
+                    </div>
+                    <div style="padding-left: 94px;"><b>Rating:</b><span id="rating1"></span></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div style="text-align: center;">
+                    <img src="./images/HungerGames.jpg" width="200px" height="250px">
+                </div>
+                <div style="padding-top:10px;">
+                    <div style="text-align: center; "><b><span id="mName2"></span></b></div>
+                    <div style="padding-top:10px;padding-left: 118px;"><b>Language: </b><span id="lang2"></span>
+                    </div>
+                    <div style="padding-left: 117px;"><b>Rating:</b><span id="rating2"></span></div>
+                </div>
+            </div>
+        </div>
+    </div-->
+    <div class="container" style="padding-top:5%">
+        <div class="row">    
+        <div id="Output"></div>
+    </div>
+
+
+</body>
+<script>
+    //Write the code here
+/*Problem Statement:
+Create an array of objects having movie details. The object should include the movie name, language, and ratings. 
+Render the details of movies on the page using this array.
+Expected Output:
+Starter code:*/
+//define the movie details.
+
+class MovieDetails {
+   constructor(Image,Name, Ratings,Language)
+     {
+        this.Image= Image;
+        this.Name=Name;
+        this.Ratings=Ratings;
+        this.Language=Language;
+
+     }
+     getDetails(){
+        console.log(this.Image,this.Name,this.Ratings);
+     };
+}
+
+let Movie1= new MovieDetails("./images/FourSoldiers.jpg","Four Soliders","4","English");
+let Movie2= new MovieDetails("./images/Tomorrowland.jpg","Tomorrowland","4.4","English");
+let Movie3= new MovieDetails("./images/HungerGames.jpg","Hunger Ganmes","4.5","English");
+
+let Movies = [];
+Movies.push(JSON.stringify(Movie1));
+Movies.push(JSON.stringify(Movie2));
+Movies.push(JSON.stringify(Movie3));
+console.log(Movies);
+
+
+
+function renderMovies(Movies) {
+        const outputDiv = document.getElementById("Output");
+        if (!outputDiv) {
+            console.error("Element with id 'Output' not found.");
+            return;
+        }
+
+        Movies.forEach((Movie,index)=> {
+        console.log(Movie);
+        console.log(index);
+        let elementobj=JSON.parse(Movie);
+    let ele= document.getElementById('Output');
+    console.log(ele);
+    ele.insertAdjacentHTML("beforeend",
+            `<div class="col-md-4">
+                <div style="text-align: center;">
+                     <img src=${elementobj.Image} width="200px" height="250px">
+                </div>
+                <div style="padding-top:10px;">
+                    <div style="text-align: center; ">
+                        <b><span id="mName${index}">${elementobj.Name}</span></b>
+                    <div style="padding-top:10px;padding-left: 101px;"><b>Language:${elementobj.Language} </b><span id="lang${index}"></span>
+                    </div>
+                    <div style="padding-left: 100px;"><b>Rating:${elementobj.Ratings} </b><span id="rating${index}"></span></div>
+                </div>
+            </div>`
+
+        );
+    
+}
+);
+}
+// Call the render function when the DOM is loaded
+    document.addEventListener("DOMContentLoaded", () => {
+        renderMovies(Movies);
+    });
+
+    
+
+
+
+</script>
+</html>
+ 
+
+
+ 

@@ -523,3 +523,348 @@ let phoneNumberPattern = new RegExp("(?= [0-9]{10})"); 
 //to make sure password has characters a to z, number 0-9 and special symbol @,#,$,%,!,^,&,*,+ or underscore
 let passworPattern = new RegExp("(?=.*[0-9])(a-zA-Z)(?=.*[@#$%!^&*+_])"); 
 
+
+test () and search () method in Javascript.
+
+sample :;
+let emailPattern = new RegExp("(?=.*@)(?=.+.com)"); 
+let emailString = prompt("Enter email id(someone@xyz.abc)"); 
+if(!(emailPattern.test(emailString))) { 
+     alert("Email Id is invalid! It should contain@ and .");
+} 
+else { 
+    alert("Email Id is Valid"); 
+} 
+
+code sample:
+
+let myPattern = /@gmail.com/; 
+let myString="mark.christ@gmail.com"; 
+console.log(myString.search(myPattern));
+console.log(myString.replace(myPattern,'@facebook.com')); 
+/* 
+OUTPUT: 
+11 
+mark.christ@facebook.com 
+*/ 
+
+
+Math Object:
+
+it is the JavaScript object that used to make mathematical calculations.
+
+Properties and methods of this object can be called without instantiation of this 
+object becasue the math object cannot be instantiated.
+
+example:
+Math.PI;//Returns 3.14159265358793   
+Math.SQRT2;//Returns 1.4142135623730951 
+
+some of the Math methods
+1.max()-- accepts multiple numeric values and returns the maximum of them.
+2.min()-- accepts multiple and return minimum of them.
+3.ceil()-- it returns the upward rounded value of the given number.
+4.floor()-- it returns the downward rounded value of the given number.
+5.random()-- it returns a randowm number between 0 and 1 incldinsve of 0 and exclusive of 1.
+6.round()-- rounds to the nearest integer.
+7.sqrt() -- square root of a number.
+
+
+JSON--> JavaScriptObjectNotation.
+it is a light weiht data interchange format used for storing and sharing data betweenclient and server over the network.
+
+For JavaScript objects, the key is not put in quotes and if values are of string data type they can be put in single or double-quotes. 
+
+But for JSON object, it is mandatory to put the key inside double quotes and all the values of type string inside double quotes.
+
+
+JavaScript Object: { firstName: "Sam", lastName: "Fernandes" } 
+//key need not be enclosed within quotes for JavaScript Objects 
+JSON Object: { "firstName": "Sam", "lastName": "Fernandes" } 
+//key must be enclosed within quotes for JSON Objects 
+
+
+Two methods are there for JSON Object
+
+1.parse(); used to parse a string as JSON and helps the program to process objects.
+2.stringify(); retruns the JSON string corresponding to the given object.
+
+
+Browser Object Model:
+
+BOM model is split the browser in to different parts and refer to each part as a 
+different type of built in object.
+
+BOM is a heirarchy of multiple Objects.
+
+Window is root nd consists of other objects in a heirarchy, such as 
+1.history Object.
+2.Navigator Object.
+3.Location Object.
+4.Document.
+
+The HTML webpage that gets loaded on thebrowser is represented using the 
+'document ' Object of the BOM model.
+
+This Object considers the webpages as a tree which is referred to 'DOM'
+Each node of this tree represents HTML elements in the page as 
+'element' Object and 
+the attributes as properties of the 'element' object.
+
+1.getElementById(x)
+2.getElementByTagName(X)
+3.getElementByClassName(X)
+4.querySelectorAll()--Finds elements by css selectors and return NodeList, which is list of element Objects.
+
+Some of the other properties of the 'document' object to access the HTML element are: 
+
+1.the body returns body element. Usage: document.body; 
+2.the forms return all form elements. Usage: document.forms; 
+3.the head returns the head element. Usage: document.head; 
+4.the images return all image elements. Usage: document.images; 
+To manipulate the content of HTML page, the following properties of 'element' object given by DOM API can be used: 
+
+5.innerHTML 
+It gives access to the content within HTML elements like div, p, h1, etc. You can set/get a text. 
+document.getElementById("heading1").innerHTML;
+
+
+1.attribute of the Element:
+document.getElementById("div1").attributes[0].value; 
+document.getElementById("div1").setAttribute('class', 'div2');
+
+Style:
+document.getElementById("div1").style.color = "red"; 
+
+
+WINDOW Object
+
+Suppose ist isnot required to update the HTML page but only certain properties of the 
+browser window on which it is rendered.Thats is to naviagte to a different URL and display a new webpage ,or close the web page or 
+store some data related to the web page.
+
+Well ,to iplemnet thhis an object that represents the entire browser window and allow 
+us to access and manipulate the window proeprties is required.
+
+BOM Model provies that window Object.
+
+This object resides on top of the BOM hierarchy.
+ Its methods give us access to the toolbars, 
+ status bars,
+  menus, and 
+  even the HTML web page currently displayed.
+
+Window Object Proeprties.
+
+1.innerHeight- Holds the inner height of the window's content area.
+ex: window.innerHeight;
+2.innerWidth-- inner width of the windows content area.
+ex: window.innnerWidth;
+3.outerHeight-- holds the outer height of the window including toolbars and scrollbars.
+ex: window.outerHeight;
+4.outerWidth-- holds outer windth of the window including toolbars and scroll bars.
+5.localStorage-- this property allows access to object that stores data without any expiration date.
+ex: localStorage.setItem('username','ravi');
+localStorage.getItem('username')
+6.sessionStorage-- this allows access to objects that store data valid only for the current session.
+sessionStorage.setItem('username','ravi');
+sessionStorage.getItem('username')
+
+Methods:
+1.open()-- window.open();
+2.close()-- window.close();
+
+History Object:
+Property:
+
+length returns the number of elements in the History list. Usage: history.length; 
+
+Methods: 
+
+back() method, loads previous URL from history list. Usage: history.back(); 
+
+forward() method, loads next URL from history list. Usage: history.forward(); 
+
+go() method, loads previous URL present  at the  given number from the history list. 
+
+
+Naviagtion Object:
+
+It contains information about the client, 
+that is, the browser on which the web page is rendered. 
+The following properties and methods help in getting this information. 
+
+1.appName.
+2.appVersion.
+3.Platform
+4.userAgent
+
+Location Object.
+
+To refresh the current page or navigate to a new page 
+use the location object.
+
+properties and methods of Location object.
+
+properties.
+1.href
+location.href;-->gives the entire URL as a string.
+
+2.hostname.
+it contains the entire URL as a string.
+
+3.Port.
+4.pathname.
+5.assign()
+used to re-load current page to a new page.
+6.relaod()
+current documnet is reloaded.
+
+
+ DOM Nodes:
+
+ HTML pgae is considered as DOM tree by the browser with every HTMLelement having a heirarchy
+ relationship with each other.
+
+ there can be one more kind of manipulation that can be achieved on DOM tree.
+ HTML elements can be dynamically added or removed.
+ Also the elements can be accessed or modified by reffering to the relationship of the 
+ target HTML element with the element that can be accessed.
+
+ W3C DOM standard ,each HTML element can be treated as Node.
+
+ HTML Documnet is 'document node'
+ every other elemnet inside is a 'element node'.
+ elements inside is a 'text node'
+
+ These nodes appear in a heirarchical struture inside the browser .And this heirarchy relationship between 
+ the ndoes allows us to traverse through teh DOM tree.
+
+ --> The TOP node is called Parents.
+ -->Every Other node in the tree belongs to one parent.
+ -->every node may have several children.
+ -->Nodes with same paraent reffered to as sibilings.
+
+  DOM API properties.
+1.parentNode.
+returns the Node Object that is teh parent node of the specified node.
+
+ex:document.body.parentNode.
+2.childNodes.
+returns NodeList Object, i.e collection of child nodes of the specified node.
+Each child can be accessed by an index number that refers to its position inside the parent elemnet 
+
+the first position is 0.
+
+ex: document.body.childNodes.
+
+firstChild;
+returns node objcet which is the first child of the specified nodes.
+ex: document.getElementbyId("div1").firstChild;
+
+Note: WHite Space inside elements is considered as text, and text is considered as nodes.
+
+lastChild;
+
+returns node object whihc is last child of the specified node.
+
+ex: document.getElementById("div1").lastChild;
+
+nextSibiling;
+returns the next Node Object.
+
+previousSibiling;
+
+retunrs previous node at same tree level.
+
+note: similar to all these properties of Node Object, the DOM also have 
+proeprties such as parentElement, firstElementChild, lastElementChild, next ElementSibiling,and 
+previousElementSibiling.
+
+the difference is that element properties return only the element Object where as node properties return element, text and attribute nodes.
+
+The node relationship allows to modify the tree of nodes by adding new nodes and removing the existing nodes if required. 
+
+For the given HTML page, below methods will do the following: 
+
+Create a new element 
+
+Create new content 
+
+Add new content to the new element 
+
+Add a new element to the existing DOM tree 
+
+Node Manipulation Methods.
+
+1.createElement();
+ex: document.createElement('span');
+2.createTextNode.
+ex: document.createTextNode()
+3.appendChild()
+ex: document.getElementById('div1').appendChild(newElement);
+4.removeChild()
+Ex: document.getElementById('div1').removeChild();
+
+*******************************************************************
+Adding event listners using a script outside by removing inline 
+script tagging to element.
+
+document.getElementById('para1').onclick=function(){ 
+        alert('Para one clicked'); 
+} 
+//OR   
+document.getElementById('para2').addEventListener('click', function(){ 
+        alert('Para two clicked');} 
+,false); 
+
+*********************************************************************
+Events in JavScripts are considered as Objects.
+
+when events are fired ,the 'event' object is generated by browser . this object encapsulates all data 
+related to that event.
+
+To Acces sor manipulate this object , it can optionally be passed as the 
+first argument to the event handler function.
+
+The proeprties of this Object are as follows.
+
+1.target
+2.type.
+
+target Event Proeprty.
+it refers to HTML element that fired the event.
+
+example:
+<p id="para1" onclick="executeMe(event)"> Para one of my page</p> 
+<script> 
+     function executeMe(event) {
+            alert(event.target.nodeName)
+        }
+</script> 
+//alert box shows P ID="PARA1" 
+
+type Event Property.
+
+Tells the type of event that have taken place like click, load, etc.
+
+Example.
+
+<p id="para1" onclick="executeMe(event)"> Para one of my page</p> 
+<script> 
+   function executeMe(event) {
+            alert(event.type)
+        }
+</script> 
+//alert box shows click
+
+
+Methods of Event Object:
+
+preventDefault().
+
+Cancels the defalut action asociated with HTML element and adds user -defined action (if required)
+
+For example, an element’s default action is to navigate to the given link. That action can be cancelled and some other action can be done instead.
+
+event.preventDefault();
